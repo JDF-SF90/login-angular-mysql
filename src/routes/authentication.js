@@ -11,11 +11,11 @@ router.post('/signup', passport.authenticate('local.signup', {
     successRedirec: '/profile',
     failureRedirect: '/signup',
     failureFlash: true
-}))
+}));
 
 router.get('/profile', (req, res) => {
     res.send('this is your profile');
-})
+});
 
 
 module.exports = router;

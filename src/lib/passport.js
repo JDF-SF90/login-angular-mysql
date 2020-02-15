@@ -9,15 +9,28 @@
      passwordField: 'password',
      passReqToCallBack: true
  }, async(req, username, password, done) => {
+     console.log('hola');
+     console.log(req.body);
 
-     const { fullname } = req.body;
      const newUser = {
          username,
-         password,
-         fullname
+         password
      };
 
-     newUser.password = await helpers.encryptPassWord(password);
-     const result = await pool.query('INSERT INTO users SET ?', [newUser]);
-     console.log(result);
+     console.log(newUser);
+
+     /*
+          const { fullname } = req.body;
+          const newUser = {
+              username,
+              password,
+              fullname
+          };
+
+          
+          console.log(newUser);
+          newUser.password = await helpers.encryptPassword(password);
+          const result = await pool.query('INSERT INTO users SET ?', [newUser]);
+          console.log(result);
+     */
  }));
