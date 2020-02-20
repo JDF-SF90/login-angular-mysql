@@ -2,6 +2,7 @@
  const LocalStrategy = require('passport-local').Strategy;
 
  const pool = require('../database');
+ const { isLoggedIn } = require('../lib/auth');
  const helpers = require('../lib/helpers');
 
  passport.use('local.signin', new LocalStrategy({
